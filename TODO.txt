@@ -1,0 +1,19 @@
+TODO list:
+   - Easy customization :
+     - Theme creator
+     - Module API :
+       - Doc
+     - Behavior customization
+       - Config loader helper
+   - Doc
+   - Features :
+     - Multi shells versions
+     - Buffer support
+     - Mini buffer (emacs-like)
+     - Autocompletition :
+       - Completition module
+       - Jedi integration
+     - Syntax support with flake
+
+Technical requires :
+    - Customization requires a good config loader and access module
