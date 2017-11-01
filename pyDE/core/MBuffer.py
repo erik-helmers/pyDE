@@ -1,19 +1,22 @@
 """ Buffers related classes"""
 
 import sys
-
-from PyQt5.QtWidgets import (QApplication, QGridLayout, QLabel, QPlainTextEdit,
+from .MFile import MFile
+from PyQt5.QtWidgets import (QApplication, QGridLayout, QLabel,
+                             QPlainTextEdit,
                              QWidget)
 
+print("The use of this module is deprecated !!!")
 
 # TODO: improve buffer (file gestion) maybe use tempfile.spooftempfile ?
-class MBuffer():
-    def __init__(self, name, file, active=False, **kwargs):
 
-        self.name = name
-        self.file = file
-        self.active = active
-        self.kwargs = kwargs
+
+class MBuffer():
+
+    loaded_buffers = {}
+
+    def __init__(self, name, file):
+        pass
 
     def getLabelInfos(self) -> str:
         return self.name
@@ -21,6 +24,8 @@ class MBuffer():
     def getMenuList(self) -> list:
         pass
 
+    def write(self, s):
+        self.file.write(s)
 
 # TODO: custom Text edit for syntax coloring
 
@@ -54,6 +59,7 @@ class QBufferWidget(QWidget):
         # Todo: Replace by custom text edit for syntax coloration purpose
         gridLayout.addWidget(self.buffLabelInfos, 2, 0)
         self.buffTEntry = QPlainTextEdit(self)
+
         gridLayout.addWidget(self.buffTEntry, 1, 0)
 
 
